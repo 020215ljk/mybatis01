@@ -1,0 +1,36 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace:dao接口的全限定名-->
+<mapper namespace="edu.soft1.dao.CustomersDao">
+<!--    sql语句-->
+
+<!--    增-->
+    <insert id="addCust" useGeneratedKeys="true" keyProperty="CustID">
+        insert into customers(CustName,LoginPwd) value (#{name},#{pwd});
+    </insert>
+
+<!--    删-->
+    <delete id="delCust" parameterType="Integer">
+        delete from customers where  custID = #{id};
+    </delete>
+
+<!--    改-->
+    <update id="updateCust">
+        update customers set phone = #{phone} where CustID = #{id};
+    </update>
+
+<!--    查ID-->
+    <select id="findCustById" parameterType="int" resultType="edu.soft1.pojo.Customers">
+        select * from customers where CustID = #{custID};
+    </select>
+
+<!--    查账号密码-->
+    <select id="findCust" resultType="edu.soft1.pojo.Customers">
+        select * from customers where CustName = #{CustName} and LoginPwd = #{LoginPwd};
+    </select>
+
+<!--    查所有-->
+    <select id="">
+
+    </select>
+</mapper>

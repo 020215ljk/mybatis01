@@ -1,0 +1,18 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace:dao接口的全限定名-->
+<mapper namespace="edu.soft1.dao.CustomersDao">
+<!--    sql语句-->
+    <insert id="addCust" useGeneratedKeys="true" keyProperty="CustID">
+        insert into customers(CustName,LoginPwd) value (#{name},#{pwd});
+    </insert>
+<!--    <delete id=""></delete>-->
+<!--    <update id=""></update>-->
+    <select id="findCustById" parameterType="int" resultType="edu.soft1.pojo.Customers">
+        select * from customers where custID = #{custID};
+    </select>
+
+    <select id="findCust" resultType="edu.soft1.pojo.Customers">
+        select * from customers where CustName = #{CustName} and LoginPwd = #{LoginPwd};
+    </select>
+</mapper>
