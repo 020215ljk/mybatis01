@@ -26,14 +26,13 @@ public class CustomersDaoImpl implements CustomersDao {
     }
 
     @Override
-    public void delCust(String CustID) {
+    public void delCust(int CustID) {
 
     }
 
     @Override
-    public void updateCust(String phone, String custID) {
+    public void updateCust(int custID, String phone) {
 
     }
-
 
 }

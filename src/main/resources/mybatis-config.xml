@@ -4,6 +4,12 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <!-- 通过这个配置文件完成mybatis与数据库的连接 -->
 <configuration>
+	<properties resource="databases.properties"/>
+
+	<typeAliases>
+		<typeAlias type="edu.soft1.pojo.Customers" alias="cust"></typeAlias>
+	</typeAliases>
+
 	<!--mybatis环境配置-->
 	<environments default="mysql"><!--默认值设置-->
 		<environment id="mysql">
@@ -11,10 +17,10 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 			<transactionManager type="JDBC"></transactionManager>
 			<!-- POOLED:mybatis自带的数据源 -->
 			<dataSource type="POOLED">
-				<property name="driver" value="com.mysql.jdbc.Driver"/>
-				<property name="url" value="jdbc:mysql://127.0.0.1:3306/caocao?characterEncoding=utf-8"/>
-				<property name="username" value="root"/>
-				<property name="password" value="123456"/>
+				<property name="driver" value="${driver}"/>
+				<property name="url" value="${url}"/>
+				<property name="username" value="${username}"/>
+				<property name="password" value="${password}"/>
 			</dataSource>
 		</environment>
 	</environments>

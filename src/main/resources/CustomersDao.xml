@@ -11,7 +11,7 @@
 
 <!--    删-->
     <delete id="delCust" parameterType="Integer">
-        delete from customers where  custID = #{id};
+        delete from customers where CustID = #{id};
     </delete>
 
 <!--    改-->
@@ -20,17 +20,17 @@
     </update>
 
 <!--    查ID-->
-    <select id="findCustById" parameterType="int" resultType="edu.soft1.pojo.Customers">
+    <select id="findCustById" parameterType="int" resultType="cust">
         select * from customers where CustID = #{custID};
     </select>
 
 <!--    查账号密码-->
-    <select id="findCust" resultType="edu.soft1.pojo.Customers">
+    <select id="findCust" resultType="cust">
         select * from customers where CustName = #{CustName} and LoginPwd = #{LoginPwd};
     </select>
 
 <!--    查所有-->
-    <select id="">
-
+    <select id="findAllCusts" resultType="cust">
+        select * from customers;
     </select>
 </mapper>

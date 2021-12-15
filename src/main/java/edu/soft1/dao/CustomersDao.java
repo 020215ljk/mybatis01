@@ -15,10 +15,10 @@ public interface CustomersDao {
     public void addCust(@Param(value = "name") String CustName, @Param(value = "pwd") String LoginPwd);
 
     //删
-    public void delCust(@Param(value = "id") String CustID);
+    public void delCust(@Param(value = "id") int custID);
 
     //改
-    public void updateCust(@Param(value = "phone") String phone, @Param(value = "id") String custID);
+    public void updateCust(@Param(value = "id") int custID, @Param(value = "phone") String phone);
 
 
 
