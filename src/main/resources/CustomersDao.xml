@@ -2,8 +2,11 @@
 
 <!--namespace:dao接口的全限定名-->
 <mapper namespace="edu.soft1.dao.CustomersDao">
-<!--    sql语句-->
 
+    <!--    开启CustomersDao的二级缓存-->
+    <cache/>
+
+<!--    sql语句-->
 <!--    增-->
     <insert id="addCust" useGeneratedKeys="true" keyProperty="CustID">
         insert into customers(CustName,LoginPwd) value (#{name},#{pwd});
@@ -16,7 +19,19 @@
 
 <!--    改-->
     <update id="updateCust">
-        update customers set phone = #{phone} where CustID = #{id};
+        update customers
+            <set>
+                <if test="name != null and name != ''">
+                    CustName = #{name}
+                </if>
+                <if test="phone != null and phone != ''">
+                    phone = #{phone}
+                </if>
+                <if test="add != null and add != ''">
+                    address = #{add}
+                </if>
+            </set>
+        where CustID = #{id}
     </update>
 
 <!--    查ID-->

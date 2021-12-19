@@ -18,7 +18,8 @@ public interface CustomersDao {
     public void delCust(@Param(value = "id") int custID);
 
     //改
-    public void updateCust(@Param(value = "id") int custID, @Param(value = "phone") String phone);
+    public void updateCust(@Param(value = "id") int custID, @Param(value = "name") String CustName,
+                           @Param(value = "phone") String phone, @Param("add") String address);
 
 
 

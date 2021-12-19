@@ -65,4 +65,8 @@ public class SqlSessionUtil {
     public static Object getMapper(Class clazz){
         return openSqlSession().getMapper(clazz);
     }
+
+    public static SqlSession getSqlSession(){//每次调用，会模拟出一个用户
+        return sqlSessionFactory.openSession();
+    }
 }

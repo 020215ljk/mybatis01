@@ -31,7 +31,7 @@ public class CustomersDaoImpl implements CustomersDao {
     }
 
     @Override
-    public void updateCust(int custID, String phone) {
+    public void updateCust(int custID, String CustName, String phone, String address) {
 
     }
 

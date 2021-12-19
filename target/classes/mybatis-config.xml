@@ -5,7 +5,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <!-- 通过这个配置文件完成mybatis与数据库的连接 -->
 <configuration>
 	<properties resource="databases.properties"/>
-
+	<settings>
+		<setting name="cacheEnabled" value="true"/>
+	</settings>
 	<typeAliases>
 		<typeAlias type="edu.soft1.pojo.Customers" alias="cust"></typeAlias>
 	</typeAliases>

@@ -111,7 +111,8 @@ public class CustomersTest {
 
         CustomersDao customersDao = sqlSession.getMapper(CustomersDao.class);
 
-        customersDao.updateCust(1,"123456789991");
+//        customersDao.updateCust(1,"123456789991");
+        customersDao.updateCust(42,"assdf","","");
         sqlSession.commit();//提交事物（增删改事务需要）
 
     }
